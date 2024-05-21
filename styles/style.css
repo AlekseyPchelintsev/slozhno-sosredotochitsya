@@ -6,7 +6,7 @@
   --accent-text-color: #ff0070;
   --title-text-color: #000028;
   --accent-color: #ff0070;
-  --border-hover-color: rgba(255, 0, 112, .4);
+  --border-hover-color: rgba(255, 0, 112, 0.4);
   --sm: 375px;
   --md: 768px;
   --lg: 1024px;
@@ -35,7 +35,7 @@
 }
 
 .decorated-zone::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   right: 20px;
@@ -46,7 +46,7 @@
 }
 
 .decorated-zone::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 20px;
   bottom: 20px;
@@ -202,8 +202,8 @@
 }
 
 .content__second-section__text-block-position {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -299,7 +299,9 @@
   }
 
   .content__second-section__text-block-position {
+    display: flex;
     flex-direction: column;
+    gap: 19px;
   }
 
   .footer {
@@ -308,5 +310,4 @@
 }
 
 @media (max-width: 375px) {
-
 }
