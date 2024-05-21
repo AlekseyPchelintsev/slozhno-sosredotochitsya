@@ -1,14 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: 'IBM Plex mono', sans-serif;
   font-size: 18px;
-  max-inline-size: 1024px;
   background-image: url(../images/cover-image-dark.png);
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  max-inline-size: 1024px;
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
@@ -23,55 +23,55 @@
 }
 
 .decorated-zone::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 20px;
   right: 20px;
-  block-size: 25px;
-  inline-size: 25px;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
 }
 
 .decorated-zone::before {
-  content: "";
+  content: '';
   position: absolute;
-  left: 20px;
   bottom: 20px;
-  block-size: 25px;
-  inline-size: 25px;
+  left: 20px;
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
 }
 
 .header__rec-logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--rec-color);
-  text-transform: uppercase;
   position: absolute;
-  pointer-events: none;
-  inline-size: 52px;
   top: 21px;
   right: 29px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--rec-color);
+  text-transform: uppercase;
+  pointer-events: none;
+  inline-size: 52px;
 }
 
 .header__rec-logo::after {
-  content: "";
-  block-size: 9px;
-  inline-size: 9px;
-  background-color: var(--rec-color);
+  content: '';
   border-radius: 50%;
   box-shadow: 0 0 5px 3px var(--rec-color);
+  background-color: var(--rec-color);
+  block-size: 9px;
+  inline-size: 9px;
 }
 
 .header {
   position: relative;
   display: grid;
-  max-block-size: 768px;
   grid-template-rows: repeat(3, calc(768px / 3));
   margin-block-end: 60px;
+  max-block-size: 768px;
 }
 
 .header__theme-menu {
@@ -91,13 +91,13 @@
 }
 
 .header__theme-menu-button {
-  cursor: pointer;
+  border: none;
+  line-height: 0;
   text-transform: lowercase;
   background-color: transparent;
-  border: none;
+  cursor: pointer;
   inline-size: 68px;
   block-size: 24px;
-  line-height: 0;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -109,28 +109,28 @@
 }
 
 .header__theme-menu-button_active {
-  pointer-events: none;
-  border-block-end: 1px solid var(--decorated-color);
   margin-block-end: -1px;
+  border-block-end: 1px solid var(--decorated-color);
+  pointer-events: none;
 }
 
 .main-title {
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  font-weight: bold;
   align-self: center;
   color: var(--header-title-text-color);
+  font-weight: bold;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
 }
 
 .header__title {
-  text-shadow: 4px 4px var(--accent-color);
   line-height: 82.5%;
+  text-shadow: 4px 4px var(--accent-color);
 }
 
 .header__text {
-  font-weight: bold;
   justify-self: flex-end;
   margin-inline-end: 1.95%;
   margin-block-start: 4.96%;
+  font-weight: bold;
   min-inline-size: 355px;
   max-inline-size: 491px;
   max-block-size: 70px;
@@ -145,8 +145,8 @@
 }
 
 .content__title {
-  font-size: inherit;
   color: var(--accent-text-color);
+  font-size: inherit;
   max-inline-size: 315px;
 }
 
@@ -279,10 +279,10 @@
   }
 
   .header__text {
-    max-inline-size: 364px;
-    max-block-size: 117px;
     margin-inline-end: 2.6%;
     margin-block-start: 5.3%;
+    max-inline-size: 364px;
+    max-block-size: 117px;
   }
 
   .content__section {
@@ -306,8 +306,8 @@
 
 @media (max-width: 375px) {
   .header {
-    min-block-size: 668px;
     margin-block-end: 40px;
+    min-block-size: 668px;
   }
 
   .header__rec-logo {
@@ -316,8 +316,8 @@
   }
 
   .header__theme-menu {
-    padding-inline-end: 10px;
     align-items: flex-start;
+    padding-inline-end: 10px;
     padding-block-start: 20%;
   }
 
@@ -327,8 +327,8 @@
   }
 
   .header__text {
-    max-inline-size: 355px;
     margin-block-start: 10.5%;
+    max-inline-size: 355px;
   }
 
   .decorated-zone::after {
@@ -337,13 +337,13 @@
   }
 
   .decorated-zone::before {
-    left: 10px;
     bottom: 10px;
+    left: 10px;
   }
 
   .content {
-    padding: 0 10px;
     gap: 49px;
+    padding: 0 10px;
   }
 
   .content__section {
