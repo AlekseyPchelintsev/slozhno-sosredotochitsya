@@ -33,10 +33,17 @@
 }
 
 .header__rec-logo::after {
-  content: '';
+  content: "";
   block-size: 9px;
   inline-size: 9px;
   background-color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0 0 5px 3px var(--accent-color);
+}
+
+@media (max-width: 375px) {
+  .header__rec-logo {
+    top: 11px;
+    right: 19px;
+  }
 }
