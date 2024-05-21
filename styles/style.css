@@ -1,21 +1,8 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-:root {
-  --bg-color: #000028;
-  --header-title-text-color: #db00ff;
-  --text-color: #f1b2ce;
-  --accent-text-color: #ff0070;
-  --title-text-color: #000028;
-  --accent-color: #ff0070;
-  --border-hover-color: rgba(255, 0, 112, 0.4);
-  --sm: 375px;
-  --md: 768px;
-  --lg: 1024px;
-}
 
 .page {
   font-family: "IBM Plex mono", sans-serif;
   font-size: 18px;
-  background-color: var(--bg-color);
   max-inline-size: 1024px;
   background-image: url(../images/cover-image-dark.png);
   background-attachment: fixed;
@@ -26,12 +13,13 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
-.header {
-  position: relative;
-  display: grid;
-  max-block-size: 768px;
-  grid-template-rows: repeat(3, calc(768px / 3));
-  margin-block-end: 60px;
+.title-decor {
+  color: var(--title-text-color);
+  background-color: var(--accent-color);
+}
+
+.header__text-whitelist {
+  display: inline-block;
 }
 
 .decorated-zone::after {
@@ -56,9 +44,39 @@
   border-block-end: 1px solid var(--accent-color);
 }
 
+.header__rec-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--rec-color);
+  text-transform: uppercase;
+  position: absolute;
+  pointer-events: none;
+  inline-size: 52px;
+  top: 21px;
+  right: 29px;
+}
+
+.header__rec-logo::after {
+  content: "";
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--rec-color);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 3px var(--rec-color);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  max-block-size: 768px;
+  grid-template-rows: repeat(3, calc(768px / 3));
+  margin-block-end: 60px;
+}
+
 .header__theme-menu {
   padding-block-start: 21px;
-  color: var(--accent-color);
+  color: var(--decorated-color);
 }
 
 .header__theme-menu-list {
@@ -83,7 +101,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--decorated-color);
 }
 
 .header__theme-menu-button:hover {
@@ -92,17 +110,8 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--decorated-color);
   margin-block-end: -1px;
-}
-
-.header__theme-menu-button_type_light {
-}
-
-.header__theme-menu-button_type_auto {
-}
-
-.header__theme-menu-button_type_dark {
 }
 
 .main-title {
@@ -127,21 +136,11 @@
   max-block-size: 70px;
 }
 
-.title-decor {
-  color: currentColor;
-  background-color: var(--accent-color);
-}
-
-.header__text-whitelist {
-  display: inline-block;
-}
-
 .content {
   display: flex;
   flex-direction: column;
   gap: 80px;
   padding: 0 20px;
-  max-inline-size: 1024px;
   color: currentColor;
 }
 
@@ -215,10 +214,6 @@
 
 .content__images-position {
   display: grid;
-  /*grid-template-areas: 
-  "a a b"
-  "c d b"
-  "c e e";*/
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
@@ -313,6 +308,11 @@
   .header {
     min-block-size: 668px;
     margin-block-end: 40px;
+  }
+
+  .header__rec-logo {
+    top: 11px;
+    right: 19px;
   }
 
   .header__theme-menu {

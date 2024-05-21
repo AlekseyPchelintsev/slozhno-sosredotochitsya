@@ -3,13 +3,16 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-:root.theme_light {
+.theme_light {
   --bg-color: #fff1f7;
   --header-title-text-color: #ffc2e6;
   --text-color: #353430;
   --accent-text-color: #353430;
   --title-text-color: #353430;
   --accent-color: #ff8dcb;
+  --decorated-color: #353430;
+  --rec-color: transparent;
+  --border-hover-color: rgba(50, 49, 45, 0.4);
 }
 
 .page.theme_light {
@@ -19,17 +22,14 @@
   */
   background-color: var(--bg-color);
   background-image: url(../images/cover-image-light.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  .header__rec-logo {
-    display: none;
-  }
 }
 
-/*@media (prefers-color-scheme: light) {
+.decorated-zone::before,
+.decorated-zone::after {
+  border-color: var(--decorated-color);
+}
+
+@media (prefers-color-scheme: light) {
   :root {
     --bg-color: #fff1f7;
     --header-title-text-color: #ffc2e6;
@@ -37,5 +37,13 @@
     --accent-text-color: #353430;
     --title-text-color: #353430;
     --accent-color: #ff8dcb;
+    --decorated-color: #353430;
+    --rec-color: transparent;
+    --border-hover-color: rgba(50, 49, 45, 0.4);
   }
-}*/
+
+  .page {
+    background-color: var(--bg-color);
+    background-image: url(../images/cover-image-light.png);
+  }
+}
