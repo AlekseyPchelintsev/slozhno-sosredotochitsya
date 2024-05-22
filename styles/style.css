@@ -1,5 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/*
+Прошу прощения за мою невнимательность, 
+надо прекращать вносить правки в проектную 
+работу по ночам :) Вы мне в первую итерацию 
+написали про :focus, а я поправил только
+:focus-visible. Спасибо кстати за подробный
+фидбек по данной работе. Это очень помогает :)
+*/
+
 .page {
   font-family: 'IBM Plex mono', sans-serif;
   font-size: 18px;
@@ -102,11 +111,14 @@
   block-size: 24px;
 }
 
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
 .header__theme-menu-button:focus-visible {
   outline: none;
   margin-block-end: -1px;
   border-block-end: 1px solid var(--decorated-color);
-  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -114,6 +126,7 @@
 }
 
 .header__theme-menu-button_active {
+  pointer-events: none;
   outline: 1px solid var(--decorated-color);
 }
 
@@ -171,6 +184,10 @@
   outline: none;
   text-decoration: none;
   text-shadow: 2px 2px var(--accent-color);
+}
+
+.content__text-block__link:focus {
+  outline: none;
 }
 
 .content__text-block__link:focus-visible {
